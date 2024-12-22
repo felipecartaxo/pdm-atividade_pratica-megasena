@@ -106,7 +106,7 @@ fun NumerosSena(megaSena: MegaSena, modifier: Modifier = Modifier) {
         Button(onClick = {
             serieApostada = ""
             mostrarNumeros = false
-            Log.d("Números da Megasena", "Os números da serieApostada foram limpos")
+            Log.d("Números apostados", "Os números da serieApostada foram limpos")
 
         }) {
             Text(
