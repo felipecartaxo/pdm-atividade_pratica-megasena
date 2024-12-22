@@ -22,7 +22,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.megasena20242.modelo.MegaSena
 import com.example.megasena20242.ui.theme.MegaSena20242Theme
 
@@ -60,6 +63,15 @@ fun NumerosSena(megaSena: MegaSena, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Text(
+            text = "Números da Megasena",
+            // Consultei no seguinte site "https://developer.android.com/develop/ui/compose/text/style-text"
+            fontWeight = FontWeight.Bold,
+            fontSize = 24.sp,
+            color = Color.Blue,
+            textAlign = TextAlign.Center
+        )
+
         TextField(
             value = serieApostada,
             onValueChange = { serieApostada = it },
@@ -90,6 +102,18 @@ fun NumerosSena(megaSena: MegaSena, modifier: Modifier = Modifier) {
                 }
             }
         }
+
+        Button(onClick = {
+            serieApostada = ""
+            mostrarNumeros = false
+            Log.d("Números sena", "Redefinição realizada")
+
+        }) {
+            Text(
+                text = "Redefinir números"
+            )
+        }
+
     }
 }
 
